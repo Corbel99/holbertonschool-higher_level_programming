@@ -11,7 +11,7 @@ if __name__ == '__main__':
     cur = conn.cursor()
     cur.execute(
         "SELECT * FROM states WHERE BINARY name = %s"
-        " ORDER BY id", state)
+        " ORDER BY id", (state,))
     rows = cur.fetchall()
     for row in rows:
         print(row)

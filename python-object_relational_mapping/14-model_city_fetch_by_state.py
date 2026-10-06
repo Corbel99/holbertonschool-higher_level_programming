@@ -1,15 +1,27 @@
 #!/usr/bin/python3
-"""Define the City model."""
+"""List all cities with their state."""
 
-from sqlalchemy import Column, ForeignKey, Integer, String
-from model_state import Base
+import sys
 
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
-class City(Base):
-    """Represent a city in the cities table."""
+from model_state import Base, State
+from model_city import City
 
-    __tablename__ = "cities"
+if __name__ == "__main__":
+    engine = create_engine(
+        "mysql+mysqldb://{}:{}@localhost/{}".format(
+            sys.argv[1], sys.argv[2], sys.argv[3]
+        )
+    )
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    cities = session.query(City, State).filter(
+        City.state_id == State.id
+    ).order_by(City.id).all()
+
+    for city, state in cities:
+        print(f"{state.name}: ({city.id}) {city.name}")

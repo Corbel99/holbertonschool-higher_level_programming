@@ -15,7 +15,7 @@ if __name__ == '__main__':
         "FROM states INNER JOIN cities "
         "ON states.id = cities.state_id "
         "WHERE BINARY states.name = %s "
-        "ORDER BY cities.id ASC", (state,))
+        "ORDER BY cities.id ASC", (state,))D
     rows = cur.fetchall()
     print(", ".join(row[0] for row in rows))
     cur.close()

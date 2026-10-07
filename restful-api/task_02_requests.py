@@ -3,6 +3,7 @@
 import requests
 import csv
 
+
 def fetch_and_print_posts():
     response = requests.get("https://jsonplaceholder.typicode.com/posts")
 
@@ -31,7 +32,7 @@ def fetch_and_save_posts():
         }
         post_list.append(new_post)
 
-    with open ("posts.csv", "w") as csvfile:
+    with open("posts.csv", "w") as csvfile:
         fieldnames = ["id", "title", "body"]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()

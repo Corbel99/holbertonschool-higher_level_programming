@@ -7,13 +7,7 @@ app = Flask(__name__)
 
 # Dictionnaire contenant les utilisateurs
 # La clé est le username et la valeur est le dictionnaire de l'utilisateur
-users = {
-    "jane": {
-        "name": "Jane",
-        "age": 28,
-        "city": "Los Angeles"
-    }
-}
+users = {}
 
 
 # Route principale de l'API

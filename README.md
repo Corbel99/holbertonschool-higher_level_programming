@@ -1,78 +1,62 @@
-# Python - Serialization
+# Holberton School – Higher Level Programming
 
-This project introduces serialization and deserialization in Python using different data formats and techniques.
+This repository gathers my projects from the **Higher Level Programming** track at [Holberton School](https://www.holbertonschool.com/).
+Each folder is a standalone project focused on a specific Python topic: data serialization, databases and ORM, and building RESTful APIs.
 
-## Learning Objectives
+## 🛠️ Technologies
 
-At the end of this project, you should be able to:
+- **Language:** Python 3
+- **Data formats:** JSON, CSV, XML, Pickle
+- **Databases:** MySQL, MySQLdb, SQLAlchemy
+- **Web / API:** HTTP, Flask, authentication (Basic Auth & JWT)
 
-- Understand the concept of serialization and deserialization.
-- Serialize and deserialize Python data using JSON.
-- Serialize and deserialize custom Python objects using Pickle.
-- Convert CSV data into JSON format.
-- Serialize and deserialize Python dictionaries using XML.
-- Work with files using Python's file handling mechanisms.
+## 📁 Projects
 
-## Tasks
+| Project | Description |
+|---------|-------------|
+| [python-serialization](./python-serialization) | Serialization and deserialization of Python data using JSON, Pickle, CSV and XML, along with file handling. |
+| [python-object_relational_mapping](./python-object_relational_mapping) | Connecting Python to a MySQL database, first with raw SQL queries (MySQLdb), then through the SQLAlchemy ORM with mapped models (e.g. `State`, `City`). |
+| [restful-api](./restful-api) | Building and consuming RESTful APIs in Python: HTTP requests, a simple API with Flask, and securing endpoints with Basic and JWT authentication. |
 
-### 0. Basic Serialization
+Each project folder contains its own `README.md` with the detailed learning objectives and tasks.
 
-Learn how to serialize and deserialize Python data using the `json` module.
+## 🎯 Learning Objectives
 
-- Serialize Python data into a JSON file.
-- Load JSON data back into Python.
+By completing these projects, I learned to:
 
-### 1. Pickling Custom Classes
+- Convert Python objects to and from different data formats (JSON, CSV, XML, Pickle)
+- Read and write files with Python's file handling mechanisms
+- Interact with a relational database from a Python script
+- Map database tables to Python classes using an ORM
+- Understand how REST APIs and HTTP methods work
+- Build an API with Flask and protect its routes with authentication
 
-Learn how to serialize custom Python objects using the `pickle` module.
+## 🚀 Usage
 
-The task implements a `CustomObject` class with:
+Clone the repository:
 
-- `name`
-- `age`
-- `is_student`
+```bash
+git clone https://github.com/Corbel99/holbertonschool-higher_level_programming.git
+cd holbertonschool-higher_level_programming
+```
 
-The object can be serialized to a binary file and later deserialized into a new instance.
+Then move into a project folder and follow the instructions in its README:
 
-### 2. Converting CSV Data to JSON
+```bash
+cd python-serialization
+```
 
-Convert data from a CSV file into JSON format.
+### Requirements
 
-The task uses:
+- Python 3.8+
+- MySQL server (for `python-object_relational_mapping`)
+- Python packages, depending on the project:
 
-- `csv.DictReader` to read CSV data.
-- `json.dump` to serialize the data.
-- File handling to create the resulting `data.json` file.
+```bash
+pip install mysqlclient SQLAlchemy Flask Flask-HTTPAuth Flask-JWT-Extended requests
+```
 
-### 3. Serializing and Deserializing with XML
+## 👤 Author
 
-Explore XML as an alternative serialization format.
-
-The task uses Python's `xml.etree.ElementTree` module to:
-
-- Create an XML tree from a Python dictionary.
-- Save the XML data to a file.
-- Read an XML file.
-- Reconstruct the original Python dictionary.
-
-## Technologies
-
-- Python 3
-- JSON
-- Pickle
-- CSV
-- XML
-- `xml.etree.ElementTree`
-
-## Requirements
-
-- Ubuntu 20.04 LTS
-- Python 3
-- PEP 8 compliant code
-- All files should be executable where required.
-
-## Repository
-
-**GitHub repository:** `holbertonschool-higher_level_programming`
-
-**Directory:** `python-serialization`
+**Corbel99** – Full-stack developer student at Holberton School
+GitHub: [@Corbel99](https://github.com/Corbel99)

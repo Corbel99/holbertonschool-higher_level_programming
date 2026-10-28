@@ -30,7 +30,7 @@ In this project, SSR is implemented in Python with the Flask framework and the J
 | 1 | Creating a Basic HTML Template in Flask | `task_01_jinja.py`, `templates/index.html`, `templates/about.html`, `templates/contact.html`, `templates/header.html`, `templates/footer.html` |
 | 2 | Creating a Dynamic Template with Loops and Conditions in Flask | `task_02_logic.py`, `templates/items.html`, `items.json` |
 | 3 | Displaying Data from JSON or CSV Files in Flask | `task_03_files.py`, `templates/product_display.html`, `products.json`, `products.csv` |
-| 4 | Extending Dynamic Data Display to Include SQLite in Flask | — |
+| 4 | Extending Dynamic Data Display to Include SQLite in Flask | `task_04_db.py`, `create_database.py`, `products.db` |
 
 ### 0. Creating a Simple Templating Program
 
@@ -88,6 +88,28 @@ Then open for example:
 
 - `http://127.0.0.1:5000/products?source=json`
 - `http://127.0.0.1:5000/products?source=csv&id=1`
+
+### 4. Extending Dynamic Data Display to Include SQLite in Flask
+
+The `/products` route now accepts a third source, `sql`, which reads the products from the `Products` table of the SQLite database `products.db`. The same `product_display.html` template is used for every source.
+
+- Invalid source: displays `Wrong source`
+- Unknown `id`: displays `Product not found`
+- Database errors are handled and displayed in the template
+
+Create the database first:
+
+```
+$ python3 create_database.py
+```
+
+Usage:
+
+```
+$ python3 task_04_db.py
+```
+
+Then open for example `http://127.0.0.1:5000/products?source=sql`.
 
 ## Author
 

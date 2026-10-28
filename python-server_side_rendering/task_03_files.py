@@ -35,6 +35,7 @@ def read_json():
         products = json.load(file)
     return products
 
+
 def read_csv():
     products = []
     with open('products.csv', 'r') as file:
@@ -55,9 +56,19 @@ def products():
         products_list = read_csv()
     else:
         return render_template('product_display.html', error="Wrong source")
+
+    product_id = request.args.get('id')
+    if product_id:
+        filtered = []
+        for product in products_list:
+            if str(product['id']) == product_id:
+                filtered.append(product)
+        if not filtered:
+            return render_template('product_display.html',
+                                   error="Product not found")
+        products_list = filtered
+
     return render_template('product_display.html', products=products_list)
-
-
 
 
 if __name__ == '__main__':

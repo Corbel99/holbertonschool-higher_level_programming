@@ -29,7 +29,7 @@ In this project, SSR is implemented in Python with the Flask framework and the J
 | 0 | Creating a Simple Templating Program | `task_00_intro.py` |
 | 1 | Creating a Basic HTML Template in Flask | `task_01_jinja.py`, `templates/index.html`, `templates/about.html`, `templates/contact.html`, `templates/header.html`, `templates/footer.html` |
 | 2 | Creating a Dynamic Template with Loops and Conditions in Flask | `task_02_logic.py`, `templates/items.html`, `items.json` |
-| 3 | Displaying Data from JSON or CSV Files in Flask | — |
+| 3 | Displaying Data from JSON or CSV Files in Flask | `task_03_files.py`, `templates/product_display.html`, `products.json`, `products.csv` |
 | 4 | Extending Dynamic Data Display to Include SQLite in Flask | — |
 
 ### 0. Creating a Simple Templating Program
@@ -70,6 +70,24 @@ $ python3 task_02_logic.py
 ```
 
 Then open `http://127.0.0.1:5000/items` in a browser.
+
+### 3. Displaying Data from JSON or CSV Files in Flask
+
+A `/products` route that reads product data from `products.json` or `products.csv`, depending on the `source` query parameter, and displays it in a table (Name, Category, Price). An optional `id` parameter filters a single product.
+
+- Invalid source: displays `Wrong source`
+- Unknown `id`: displays `Product not found`
+
+Usage:
+
+```
+$ python3 task_03_files.py
+```
+
+Then open for example:
+
+- `http://127.0.0.1:5000/products?source=json`
+- `http://127.0.0.1:5000/products?source=csv&id=1`
 
 ## Author
 

@@ -28,7 +28,7 @@ In this project, SSR is implemented in Python with the Flask framework and the J
 |---|------|---------|
 | 0 | Creating a Simple Templating Program | `task_00_intro.py` |
 | 1 | Creating a Basic HTML Template in Flask | `task_01_jinja.py`, `templates/index.html`, `templates/about.html`, `templates/contact.html`, `templates/header.html`, `templates/footer.html` |
-| 2 | Creating a Dynamic Template with Loops and Conditions in Flask | — |
+| 2 | Creating a Dynamic Template with Loops and Conditions in Flask | `task_02_logic.py`, `templates/items.html`, `items.json` |
 | 3 | Displaying Data from JSON or CSV Files in Flask | — |
 | 4 | Extending Dynamic Data Display to Include SQLite in Flask | — |
 
@@ -58,6 +58,18 @@ $ python3 task_01_jinja.py
 ```
 
 Then open `http://127.0.0.1:5000/` in a browser.
+
+### 2. Creating a Dynamic Template with Loops and Conditions in Flask
+
+A `/items` route that reads a list of items from `items.json` and passes it to the `items.html` template. The template uses a Jinja `{% for %}` loop to display the items as an unordered list, and an `{% if %}` condition to display `No items found` when the list is empty.
+
+Usage:
+
+```
+$ python3 task_02_logic.py
+```
+
+Then open `http://127.0.0.1:5000/items` in a browser.
 
 ## Author
 

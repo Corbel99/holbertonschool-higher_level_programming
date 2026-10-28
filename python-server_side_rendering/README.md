@@ -27,7 +27,7 @@ In this project, SSR is implemented in Python with the Flask framework and the J
 | # | Task | File(s) |
 |---|------|---------|
 | 0 | Creating a Simple Templating Program | `task_00_intro.py` |
-| 1 | Creating a Basic HTML Template in Flask | — |
+| 1 | Creating a Basic HTML Template in Flask | `task_01_jinja.py`, `templates/index.html`, `templates/about.html`, `templates/contact.html`, `templates/header.html`, `templates/footer.html` |
 | 2 | Creating a Dynamic Template with Loops and Conditions in Flask | — |
 | 3 | Displaying Data from JSON or CSV Files in Flask | — |
 | 4 | Extending Dynamic Data Display to Include SQLite in Flask | — |
@@ -46,6 +46,18 @@ Usage:
 ```
 $ python3 main_0.py
 ```
+
+### 1. Creating a Basic HTML Template in Flask
+
+A basic Flask application that serves three pages (`/`, `/about`, `/contact`) rendered with Jinja templates. A reusable header (with navigation links) and footer are shared by every page using `{% include %}`.
+
+Usage:
+
+```
+$ python3 task_01_jinja.py
+```
+
+Then open `http://127.0.0.1:5000/` in a browser.
 
 ## Author
 
